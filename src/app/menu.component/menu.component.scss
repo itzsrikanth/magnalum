@@ -1,0 +1,86 @@
+:host {
+    position: absolute;
+    z-index: 50;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    background: url('/assets/img/26964_landscape_sand_dunes.jpg');
+    filter: grayscale(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    transition: all .4s;
+    transform: rotateX(90deg);
+    transform-origin: center top;
+    box-shadow: 0 0 30px 2px rgba(0,0,0, 1);
+}
+
+.menu-outer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+
+.menu-list {
+    margin: 0;
+    width: 55%;
+    &>li{
+        width: 100%;
+        border-bottom: 1px solid #fff;
+        transition: all .4s;
+        position: relative;
+        cursor: pointer;
+        &>a {
+            text-transform: uppercase;
+            font-family: Roboto, sans-serif;
+            color: #fff;
+            font-weight: 300;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+    &>li:last-child {
+        border: none !important;
+    }
+    &>li:hover>.menu-bg {
+        transform: scale(1);
+        transtition: all .4s;
+    }
+}
+
+.menu-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255,255,255,0.3);
+    transform: scale(0);
+    transition: all .4s;
+}
+
+.menu-sub-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+    background: rgba(0,0,0,0.5);
+}
+.menu-sub-split-holder {
+    height: 100%;
+    width: 50%;
+    overflow-y: hidden;
+}
+.menu-sub-splitter {
+    width: 100%;
+}
+.menu-sub-page {
+    width: 100%;
+    height: 100%;
+}

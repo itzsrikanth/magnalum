@@ -1,0 +1,10 @@
+<div class="card-shadow"></div>
+<article class="card-container d-flex flex-column align-items-center justify-content-between">
+    <img [src]="ImgSrc" class="card-img mt-2"/>
+    <div class="card-content-holder p-3">
+        <ng-content select=".card-content"></ng-content>
+    </div>
+    <div class="read-more">
+        <input type="button" value="Read More" />
+    </div>
+</article>

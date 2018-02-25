@@ -1,0 +1,47 @@
+.btn-holder {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.btn-wave {
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    animation-name: waves;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    z-index: 10;
+    &:nth-child(2) {
+        animation-delay: .2s;
+    }
+    &:nth-child(3) {
+        animation-delay: .4s;
+    }
+}
+.btn-content {
+    cursor: pointer;
+    z-index: 11;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    background: #fff;
+    &>i {
+        color: #97A3CD;
+    }
+}
+@keyframes waves {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,23 @@
+<nav class="menu-outer d-flex align-items-center justify-content-center">
+  <ul class="menu-list d-flex flex-column justify-content-center">
+    <li *ngFor="let menu of menus; let idx = index" (mouseover)="showSubMenu(idx)" class="py-4 d-flex justify-content-center">
+      <a>{{menu}}</a>
+      <span class="menu-bg"></span>
+    </li>
+  </ul>
+</nav>
+
+<div class="menu-sub-holder d-flex flex-row">
+  <div #imageSplit class="menu-sub-split-holder">
+    <div [@scrollTop]="{value: 'intermediate', params:{scrollTop: scrollTop}}" class="menu-sub-splitter d-flex flex-column" [style.height.%]="menus.length * 100">
+      <div *ngFor="let page of imageUrls" class="menu-sub-page d-flex flex-column justify-content-around align-items-center">
+        <image-stack *ngFor="let img of page" ImageUrl="/assets/img/{{img}}"></image-stack>
+      </div>
+    </div>
+  </div>
+  <div class="menu-sub-split-holder">
+    <div class="menu-sub-splitter">
+      <div class="menu-sub-text"></div>
+    </div>
+  </div>
+</div>
