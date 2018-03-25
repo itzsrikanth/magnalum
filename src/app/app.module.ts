@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu.component/menu.component';
 import { ImageStackComponent } from './image.stack/image.stack.component';
@@ -12,6 +13,9 @@ import { CardsComponent } from './cards/cards.component';
 import { WaveButtonComponent } from './buttons/wave.button.component';
 import { ScrollEventDirective } from './scroll.directive';
 import { MasterService } from './master.service';
+
+import { HomeComponent } from './home.component/home.component';
+import { Page404Component } from './page404/page.404.component';
 
 
 @NgModule({
@@ -21,13 +25,16 @@ import { MasterService } from './master.service';
     ImageStackComponent,
     CardsComponent,
     WaveButtonComponent,
-    ScrollEventDirective
+    ScrollEventDirective,
+      HomeComponent,
+      Page404Component
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AppRoutingModule,
   ],
   providers: [
     MasterService

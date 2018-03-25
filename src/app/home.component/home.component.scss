@@ -1,0 +1,211 @@
+@import '../../variables.scss';
+
+// common
+.inside-button {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: #fff;
+}
+
+.shadow-div {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: rgba(255,255,255,0.3);
+    transform: scale(0);
+    transition: all .4s;
+    position: absolute;
+    top: 0;
+}
+
+#book-now {
+    width: 180px;
+    border: 2px solid #fff;
+    height: 50px;
+    border-radius: 25px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+
+    & > div {
+        border-radius: 25px;
+    }
+
+    &:hover {
+        box-shadow: 0 0 15px 4px rgba(255,255,255,0.5);
+    }
+
+    &:hover > div {
+        transition: all .4s;
+        transform: scale(1);
+    }
+}
+
+.learn-more {
+    width: 180px;
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    color: #fff;
+    background: transparent;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+
+    & > div {
+        border-radius: 25px;
+    }
+
+    &:hover {
+        box-shadow: 0 0 15px 4px rgba(255,255,255,0.5);
+    }
+
+    &:hover > div {
+        transition: all .4s;
+        transform: scale(1);
+    }
+}
+
+.know-more {
+    height: 46px;
+    width: 170px;
+    border: 2px solid #ddd;
+    border-radius: 23px;
+    transition: all .4s;
+    position: relative;
+    cursor: pointer;
+
+    & > div {
+        border-radius: 23px;
+    }
+
+    &:hover {
+        border: 2px solid #fff;
+        box-shadow: 0 0 15px 4px rgba(255,255,255,0.5);
+    }
+
+    &:hover > div {
+        transition: all .4s;
+        transform: scale(1);
+    }
+}
+
+// parallax page one
+/*.header-top {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #111, #333, #111);
+}
+.header-top-collapsed {
+    height: 50px !important;
+}*/
+
+.page {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+}
+// page-one
+#page-one {
+    padding-left: 35px;
+}
+
+#motto {
+    padding-top: 120px;
+    font-size: 65px;
+    font-family: $Roboto;
+    color: #fff;
+}
+
+#slogan {
+    font-family: $Pacifico;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.short-desc {
+    margin-top: 100px;
+
+    & .col-4 {
+        color: #ddd;
+        font-family: $Roboto;
+        padding: 0 60px !important;
+    }
+}
+
+#geo {
+    position: absolute;
+    bottom: 30px;
+}
+
+#geo-label {
+    font-family: $Roboto;
+    font-size: 14px;
+    color: #eee;
+}
+
+#geo-location {
+    font-family: $Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+// page-two
+#page-two {
+    overflow-x: hidden;
+}
+
+#parallelogram-holder {
+    overflow-x: hidden;
+    height: 100%;
+    width: 120vw;
+    transform: translateX(-10vw);
+}
+
+.parallelogram {
+    height: 100%;
+    flex: 1 1;
+    transition: flex .4s;
+    transform: skewX(-10deg);
+    background-size: cover !important;
+    background-position-y: bottom !important;
+
+    &:hover {
+        flex: 1.5 1;
+    }
+}
+
+.parallelogram-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 70%;
+    background: rgba(0,0,0,0.6);
+}
+
+wave-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+// page-three
+#page-three {
+    footer {
+        width: 100%;
+        height: 40%;
+        background: #040603;
+    }
+}
+
+.card-holder {
+    width: 100%;
+    height: 60%;
+    padding: 35px 15px;
+}
