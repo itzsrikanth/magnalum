@@ -187,6 +187,26 @@
     right: 0;
     top: 70%;
     background: rgba(0,0,0,0.6);
+    & h3 {
+        color: #fff;
+        text-align: center;
+        text-transform: capitalize;
+    }
+    wave-button {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+.co {
+    .co-logo {
+        font-size: 72px;
+        color: #FFF;
+    }
+    .co-text {
+        color: #FFF;
+        width: 85%;
+    }
 }
 
 wave-button {

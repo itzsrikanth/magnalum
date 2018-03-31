@@ -7,27 +7,37 @@ import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu.component/menu.component';
-import { ImageStackComponent } from './image.stack/image.stack.component';
-import { CardsComponent } from './cards/cards.component';
-import { WaveButtonComponent } from './buttons/wave.button.component';
+
+// recom
+import { ImageStackComponent } from './recom/image.stack/image.stack.component';
+import { CardsComponent } from './recom/cards/cards.component';
+import { WaveButtonComponent } from './recom/buttons/wave.button.component';
 import { ScrollEventDirective } from './scroll.directive';
 import { MasterService } from './master.service';
 
+// pages
 import { HomeComponent } from './home.component/home.component';
-import { Page404Component } from './page404/page.404.component';
-
+import { MenuComponent } from './pages/menu.component/menu.component';
+import { Page404Component } from './pages/page404/page.404.component';
+import { AboutUsComponent } from './pages/aboutUs/aboutUs.component';
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+
+    // recom
     ImageStackComponent,
     CardsComponent,
     WaveButtonComponent,
     ScrollEventDirective,
-      HomeComponent,
-      Page404Component
+
+    // pages
+    HomeComponent,
+    MenuComponent,
+      Page404Component,
+      AboutUsComponent,
+      ProductComponent
   ],
   imports: [
     BrowserModule,

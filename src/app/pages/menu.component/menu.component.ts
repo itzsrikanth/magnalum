@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { scrollTop } from '../animations';
+import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { scrollTop } from '../../animations';
 
 @Component({
     selector: 'menu-nav',
@@ -11,15 +11,21 @@ import { scrollTop } from '../animations';
 })
 export class MenuComponent {
     @ViewChild('imageSplit') imageSplit: ElementRef;
+    @Output() menuClick = new EventEmitter();
     scrollTop: number;
     menus = [
-        'home',
-        'about us',
-        'products',
-        'production technology',
-        'research & development',
-        'contact us',
-        'terms & conditions'
+        {text: 'home', link: '/home'},
+        {text: 'about us', link: '/about-us'},
+        {text: 'products', link: '/home', children: [
+            {
+                text: '1.18 Mesh Magnalium Powder',
+                param: 1
+            }
+        ]},
+        {text: 'production technology', link: '/home'},
+        {text: 'research & development', link: '/home'},
+        {text: 'contact us', link: '/home'},
+        {text: 'terms & conditions', link: '/home'},
     ];
 
     imageUrls = [

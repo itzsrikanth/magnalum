@@ -1,4 +1,4 @@
-<menu-nav [class.menu-outer-active]="menu"></menu-nav>
+<menu-nav [class.menu-outer-active]="menu" (menuClick)="menu = false"></menu-nav>
 <!-- <header class="header-top" [@headerTopCollapse]="headerTopCollapsed"></header> -->
 <div (click)="menu = !menu" [class.menu-button-active]="menu" class="menu-button d-flex flex-column justify-content-around align-items-center py-1">
   <div class="menu-button-line"></div>

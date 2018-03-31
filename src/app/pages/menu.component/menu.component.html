@@ -1,7 +1,7 @@
 <nav class="menu-outer d-flex align-items-center justify-content-center">
   <ul class="menu-list d-flex flex-column justify-content-center">
-    <li *ngFor="let menu of menus; let idx = index" (mouseover)="showSubMenu(idx)" class="py-4 d-flex justify-content-center">
-      <a>{{menu}}</a>
+    <li *ngFor="let menu of menus; let idx = index" [routerLink]="menu.link" (mouseover)="showSubMenu(idx)" (click)="menuClick.emit()" class="py-4 d-flex justify-content-center">
+      <a >{{menu.text}}</a>
       <span class="menu-bg"></span>
     </li>
   </ul>
