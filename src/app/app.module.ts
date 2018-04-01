@@ -8,16 +8,24 @@ import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 
+// Directives
+import { 
+  ScrollEventDirective,
+  MouseWheelDirective,
+  SmoothScrollDirective } from './directives/mouse.directive';
+
+// Services
+import { MasterService } from './services/master.service';
+
 // recom
 import { ImageStackComponent } from './recom/image.stack/image.stack.component';
 import { CardsComponent } from './recom/cards/cards.component';
 import { WaveButtonComponent } from './recom/buttons/wave.button.component';
-import { ScrollEventDirective } from './scroll.directive';
-import { MasterService } from './master.service';
 
 // pages
 import { HomeComponent } from './home.component/home.component';
-import { MenuComponent } from './pages/menu.component/menu.component';
+// import { MenuComponent } from './pages/menu.component/menu.component';
+import { MenuDemandComponent } from './pages/menuDemand/menuDemand.component';
 import { Page404Component } from './pages/page404/page.404.component';
 import { AboutUsComponent } from './pages/aboutUs/aboutUs.component';
 import { ProductComponent } from './pages/product/product.component';
@@ -25,19 +33,21 @@ import { ProductComponent } from './pages/product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
-
+    // Directives
+    ScrollEventDirective,
+    MouseWheelDirective,
+    SmoothScrollDirective,
     // recom
     ImageStackComponent,
     CardsComponent,
     WaveButtonComponent,
-    ScrollEventDirective,
-
     // pages
     HomeComponent,
-    MenuComponent,
-      Page404Component,
-      AboutUsComponent,
-      ProductComponent
+    // MenuComponent,
+    MenuDemandComponent,
+    Page404Component,
+    AboutUsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

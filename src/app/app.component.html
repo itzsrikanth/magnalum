@@ -1,14 +1,18 @@
-<menu-nav [class.menu-outer-active]="menu" (menuClick)="menu = false"></menu-nav>
+<!-- <menu-nav [class.menu-outer-active]="menu" (menuClick)="menu = false"></menu-nav> -->
 <!-- <header class="header-top" [@headerTopCollapse]="headerTopCollapsed"></header> -->
-<div (click)="menu = !menu" [class.menu-button-active]="menu" class="menu-button d-flex flex-column justify-content-around align-items-center py-1">
-  <div class="menu-button-line"></div>
-  <div class="menu-button-line"></div>
-  <div class="menu-button-line"></div>
-</div>
 
-<div class="parallax-container" scroll-event>
-  <div class="parallax-one">
+<div class="parallax-container" scroll-event [smoothScroll]="pageNumber">
+  <div class="parallax-one" mouse-wheel>
     <router-outlet></router-outlet>
   </div>
-  <div class="parallax-two"></div>
+  <div class="parallax-two">
+    <div class="bubble b-1"></div>
+  </div>
+  <menu-demand [class.active]="menu" (menuClick)="menu = false"></menu-demand>
+  <div (click)="menu = !menu" [class.menu-button-active]="menu" class="menu-button d-flex flex-column justify-content-around align-items-center py-1">
+    <div class="menu-button-line"></div>
+    <div class="menu-button-line"></div>
+    <div class="menu-button-line"></div>
+  </div>
 </div>
+<div id="loading" *ngIf="init"></div>

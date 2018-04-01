@@ -1,0 +1,23 @@
+@import '../../../variables.scss';
+
+.menu-d-outer {
+    width: 30vw;
+    min-width: 460px;
+    height: 100vh;
+    // background: #4a4a4a;
+    background: rgba(0,0,0,0.7);
+    z-index: $zIndexMenu;
+    a {
+        color: #FFF;
+        text-transform: uppercase;
+    }
+}
+
+.menu-child {
+    transform: scaleY(0);
+    transition: all .3s ease-in;
+    &.active {
+        transform: scaleY(1);
+        transition: all .3s ease-out;
+    }
+}

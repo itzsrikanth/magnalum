@@ -7,7 +7,7 @@
   position: fixed;
   top: 30px;
   right: 45px;
-  z-index: 100;
+  z-index: $zIndexMenuButton;
   cursor: pointer;
 }
 .menu-button-active {
@@ -24,6 +24,20 @@
 .menu-outer-active {
     transition: all .4s;
     transform: rotateX(0deg);
+}
+menu-demand {
+    position: absolute;
+    transition: all .4s ease-in;
+    right: -30%;
+    top: 0;
+    // transform: translateX(30%);
+    // transform: rotateY(90deg);
+    &.active {
+        right: 0;
+        // transform: rotateY(0deg);
+        // transform: translateX(0);
+        transition: all .4s ease-out;
+    }
 }
 .menu-button-line {
   height: 3px;
@@ -58,3 +72,16 @@
     height: 150vh;
 }
 
+.bubble {
+
+}
+
+#loading {
+    position: absolute;
+    z-index: $zIndexMax;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+}

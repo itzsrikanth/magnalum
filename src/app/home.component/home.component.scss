@@ -112,19 +112,89 @@
 #page-one {
     padding-left: 35px;
 }
-
+#border-container {
+    padding-top: 80px;
+    // transform: translateY(30px);
+    // transition: all .4 ease-in;
+    // opacity: 0;
+    // &.active {
+        // transform: translateY(0);
+        // opacity: 1;
+        // transition: all .4 ease-out;
+    // }
+}
+#double-border {
+    padding-top: 20px;
+    padding-bottom: 80px;
+    border: double 5px #FFF;
+    width: 80%;
+}
+#estd {
+    color: #FFF;
+    font-size: 13px;
+    font-family: $Roboto;
+}
+#heading {
+    color: #FFF;
+    font-family: $Roboto;
+    font-size: 80px;
+    margin-top: 30px;
+}
+#sub-heading {
+    color: #FFF;
+}
 #motto {
-    padding-top: 120px;
-    font-size: 65px;
+    padding-top: 70px;
+    font-size: 25px;
     font-family: $Roboto;
     color: #fff;
+    padding-left: 30px;
+    // transform: translateX(30px);
+    // transition: all .45 ease-in;
+    // opacity: 0;
+    // &.active {
+    //     transform: translateX(0);
+    //     opacity: 1;
+    //     transition: all .45 ease-out;
+    // }
 }
 
 #slogan {
     font-family: $Pacifico;
     color: #fff;
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    padding-left: 30px;
+    // transform: translateX(30px);
+    // transition: all .5 ease-in;
+    // opacity: 0;
+    // &.active {
+    //     transform: translateX(0);
+    //     opacity: 1;
+    //     transition: all .5 ease-out;
+    // }
+}
+
+#land-sub {
+    // transform: translateX(-30px);
+    // transition: all .55 ease-in;
+    // opacity: 0;
+    // &.active {
+    //     transform: translateX(0);
+    //     opacity: 1;
+    //     transition: all .55 ease-out;
+    // }
+}
+
+#geo {
+    // transform: translateX(-30px);
+    // transition: all .6 ease-in;
+    // opacity: 0;
+    // &.active {
+    //     transform: translateX(0);
+    //     opacity: 1;
+    //     transition: all .6 ease-out;
+    // }
 }
 
 .short-desc {
@@ -136,7 +206,6 @@
         padding: 0 60px !important;
     }
 }
-
 #geo {
     position: absolute;
     bottom: 30px;
@@ -171,12 +240,31 @@
     height: 100%;
     flex: 1 1;
     transition: flex .4s;
-    transform: skewX(-10deg);
     background-size: cover !important;
     background-position-y: bottom !important;
-
+    box-shadow: 1px 1px 30px 2px rgba(0,0,0,0.7);
+    transition: all .5s ease-out;
     &:hover {
         flex: 1.5 1;
+    }
+    &:first-child {
+        transform: translateX(0) skewX(-10deg);        
+    }
+    &:nth-child(2) {
+        transform: translateX(-100%) skewX(-10deg);        
+    }
+    &:nth-child(3) {
+        transform: translateX(-200%) skewX(-10deg);        
+    }
+    &:nth-child(4) {
+        transform: translateX(-300%) skewX(-10deg);        
+    }
+    &:nth-child(5) {
+        transform: translateX(-400%) skewX(-10deg);        
+    }
+    &.active {
+        transform: skewX(-10deg);
+        transition: all .5s ease-in;
     }
 }
 
@@ -198,7 +286,18 @@
     }
 }
 
+.co-parent {
+    margin-top: 4rem;
+}
 .co {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: all .5s ease-out;
+    &.active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .5s ease-in;
+    }
     .co-logo {
         font-size: 72px;
         color: #FFF;
@@ -217,6 +316,7 @@ wave-button {
 
 // page-three
 #page-three {
+    position: relative;
     footer {
         width: 100%;
         height: 40%;
@@ -228,4 +328,15 @@ wave-button {
     width: 100%;
     height: 60%;
     padding: 35px 15px;
+}
+
+.ss-iphone-outer{
+    &.active {
+        transform: translateX(0);
+        transition: all .5s;
+        transition-timing-function: ease-out
+    }
+    transition: all .5s;
+    transform: translateX(200%);
+    transition-timing-function: ease-in;
 }

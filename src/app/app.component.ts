@@ -1,5 +1,5 @@
-import { Component, HostListener, ElementRef, OnInit } from '@angular/core';
-import { MasterService } from './master.service';
+import { Component, HostListener, ElementRef, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { MasterService } from './services/master.service';
 import {
   headerTopCollapse,
   pageEnter
@@ -14,22 +14,23 @@ import {
     pageEnter
   ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 
   private headerTopCollapsed = 'expanded';
   private pageEnterState: string;
+  private pageNumber = 0;
+  private init = true;
 
   constructor(
     private elementRef: ElementRef,
-    private master: MasterService
+    private master: MasterService,
+    private changeDetector: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
     this.master.scrollStream$
       .subscribe((event) => {
 
-        // console.log(event);
-        // header top collapse on scrollTop > 0
         if (event.target.scrollTop > 50) {
           this.headerTopCollapsed = 'collapsed';
         } else {
@@ -38,7 +39,22 @@ export class AppComponent implements OnInit {
 
       });
 
+      this.master.mouseWheelStream$
+        .subscribe(event => {
+          if (event.deltaY > 0 && this.pageNumber < 4) {
+            this.pageNumber++;
+          } 
+          else if (event.deltaY < 0 && this.pageNumber > 0) {
+            this.pageNumber--;
+          }
+        })
+
     this.pageEnterState = 'visible';
+  }
+
+  ngAfterViewInit() {
+    this.init = false;
+    this.changeDetector.detectChanges();
   }
 
   selectProduct(productId) {

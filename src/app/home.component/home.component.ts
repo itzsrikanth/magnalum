@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { MasterService } from '../services/master.service';
 
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    styleUrls: ['./home.component.scss', './iPhone.scss']
 })
-export class HomeComponent {
-
+export class HomeComponent implements OnInit, AfterViewInit {
+    
     parallelogram = [
         { 
             url: '/assets/assets/1.18MeshMagnaliumPowder.jpg', 
@@ -37,17 +38,26 @@ export class HomeComponent {
         'image-in-the-image-2204798_960_720.jpg'
     ];
     private productIndex = 0;
-    coCard = [
-        {
-            text: 'The quick brown fox jumps over the lazy dog'
-        },{
-            text: 'The quick brown fox jumps over the lazy dog'
-        },{
-            text: 'The quick brown fox jumps over the lazy dog'
-        },{
-            text: 'The quick brown fox jumps over the lazy dog'
-        },
-    ]
+    private WindowHeight = 0;
+    private ratio = 0;
+    
+    constructor(
+        private masterService: MasterService,
+        // private changeDetector: ChangeDetectorRef
+    ) { }
+    
+    ngOnInit() {
+        this.WindowHeight = window.innerHeight;
+        this.masterService.scrollStream$
+        .subscribe(event => {
+            this.ratio = event['target']['scrollTop']/this.WindowHeight;
+        });
+    }
+
+    ngAfterViewInit() {
+        // this.init = true;
+        // this.changeDetector.detectChanges();
+    }
 
     selectProduct(productIndex) {
         console.log(productIndex);

@@ -1,10 +1,14 @@
 <section id="page-one" class="page">
-    <h1 id="motto">
-        Limitations defied.
-        <br>Quality delivered.
-    </h1>
-    <p id="slogan">We cut through rocks, not with power but persistence.</p>
-    <div class="row pl-5">
+    <div id="border-container" class="d-flex justify-content-center">
+        <div id="double-border" class="d-flex align-items-center flex-column">
+            <p id="estd">ESTD. 1992</p>
+            <h1 id="heading">JAGADA INDUSTRIES</h1>
+            <h4 id="sub-heading">PIONEERS IN NON-METAL PYROTECHNIC POWDERS</h4>
+        </div>
+    </div>
+    <h1 id="motto">Limitations defied. Quality delivered.</h1>
+    <p id="slogan">We cut through rocks, not with power but persistence.</p> -->
+    <div id="land-sub" class="row pl-5" [class.active]="init">
         <div id="book-now" class="ml-3">
             <input type="button" class="inside-button" value="Book Now" />
             <div class="shadow-div"></div>
@@ -14,6 +18,65 @@
             <div class="shadow-div"></div>
         </div>
     </div>
+    <div class="row d-flex align-items-center justify-content-center mt-5">
+        <span id="geo-label">Locate us:&nbsp;</span>
+        <span id="geo-location">40&deg; 26' 46" N&nbsp;-&nbsp;79&deg; 58' 56" W</span>
+    </div>
+</section>
+
+<section id="page-three" class="page d-flex flex-column">
+    <div class="row co-parent d-flex justify-content-start align-items-around mb-5 h-100">
+
+        <div class="col-8">
+            <div class="row d-flex h-100 flex-wrap align-content-around">
+                <div class="co col-6 d-flex align-items-center flex-column" [class.active]="ratio > 0.4 && ratio < 1.5">
+                    <div class="co-logo d-flex justify-content-center">
+                        <i class="fa fa-bell"></i>
+                    </div>
+                    <div class="co-text mt-4">High Quality of products, ISO 9001 certified. Strict quality assurance program to ensure customer satisfaction and retention</div>
+                </div>
+                <div class="co col-6 d-flex align-items-center flex-column" [class.active]="ratio > 0.4 && ratio < 1.5">
+                    <div class="co-logo d-flex justify-content-center">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <div class="co-text mt-4">Experienced Pioneers in industry since 1992.</div>
+                </div>
+                <div class="co col-6 d-flex align-items-center flex-column" [class.active]="ratio > 0.6 && ratio < 1.7">
+                    <div class="co-logo d-flex justify-content-center">
+                        <i class="fa fa-braille"></i>
+                    </div>
+                    <div class="co-text mt-4">Systematic Quality Control Processes ensure the correct chemistry, strength, casting, soundness              and dimension standard for all the product to achieve optimal performance.</div>
+                </div>
+                <div class="co col-6 d-flex align-items-center flex-column" [class.active]="ratio > 0.6 && ratio < 1.7">
+                    <div class="co-logo d-flex justify-content-center">
+                        <i class="fa fa-binoculars"></i>
+                    </div>
+                    <div class="co-text mt-4">Fine art of Chemical Metallurgy, well equpped with latest technology to deliver beyond expectation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="ss-iphone-outer" [class.active]="ratio > 0.1 && ratio < 1.4">
+                <div class="ss-iphone-speaker"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="page-two" class="page">
+    <div id="parallelogram-holder" class="d-flex flex-row">
+        <div *ngFor="let parallel of parallelogram; let idx = index" class="parallelogram" [class.active]="ratio > 1.1 && ratio < 2.4" (mouseover)="selectProduct(idx)" [style.background]="'url(' + parallel.url + ')'"></div>
+    </div>
+    <div class="parallelogram-info pt-2">
+        <h3>{{ parallelogram[productIndex].text }}</h3>
+        <wave-button>
+            <i class="fas fa-info"></i>
+        </wave-button>
+    </div>
+</section>
+<section id="page-four">
     <div class="row short-desc">
         <div class="col-4">
             Best quality in market guaranteed with affordable price long with a prompt delivery nationally or overseas.
@@ -28,45 +91,6 @@
                 <input type="button" class="inside-button" value="Know More" />
                 <div class="shadow-div"></div>
             </div>
-        </div>
-    </div>
-    <div class="row d-flex align-items-center justify-content-center mt-5">
-        <span id="geo-label">Locate us:&nbsp;</span>
-        <span id="geo-location">40&deg; 26' 46" N&nbsp;-&nbsp;79&deg; 58' 56" W</span>
-    </div>
-</section>
-<section id="page-two" class="page">
-    <div id="parallelogram-holder" class="d-flex flex-row">
-        <div *ngFor="let parallel of parallelogram; let idx = index" class="parallelogram" (mouseover)="selectProduct(idx)" [style.background]="'url(' + parallel.url + ')'"></div>
-    </div>
-    <div class="parallelogram-info pt-2">
-        <h3>{{ parallelogram[productIndex].text }}</h3>
-        <wave-button>
-            <i class="fas fa-info"></i>
-        </wave-button>
-    </div>
-</section>
-<section id="page-three" class="page d-flex flex-column">
-    <!-- <div class="card-holder d-flex justity-content-around align-items-center">
-        <card-x [ImgSrc]="'/assets/img/' + cardImgUrls[0]">
-            <div class="card-content"></div>
-        </card-x>
-        <card-x [ImgSrc]="'/assets/img/' + cardImgUrls[1]">
-            <div class="card-content"></div>
-        </card-x>
-        <card-x [ImgSrc]="'/assets/img/' + cardImgUrls[2]">
-            <div class="card-content"></div>
-        </card-x>
-        <card-x [ImgSrc]="'/assets/img/' + cardImgUrls[3]">
-            <div class="card-content"></div>
-        </card-x>
-    </div> -->
-    <div class="row d-flex justify-content-center align-items-around my-5">
-        <div class="co d-flex align-items-center flex-column" *ngFor="let card of coCard">
-            <div class="co-logo d-flex justify-content-center">
-                <i class="fa fa-home"></i>
-            </div>
-            <div class="co-text mt-4">{{ card.text }}</div>
         </div>
     </div>
     <footer class="row">

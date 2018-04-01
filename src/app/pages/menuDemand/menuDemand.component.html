@@ -1,0 +1,12 @@
+<nav class="menu-d-outer">
+    <ul class="w-100 d-flex align-items-center flex-column">
+        <li *ngFor="let menu of menus; let idx = index">
+            <a class="py-2" (click)="menuRouting(idx)">{{ menu.text }}</a>
+            <ul *ngIf="menu.children" [class.active]="menu.childActive" class="menu-child w-100 d-flex flex-column align-items-center">
+                <li *ngFor="let subMenu of menu.children">
+                    <a [routerLink]="menu.link" [queryParams]="{'productId':subMenu.param}" class="py-2">{{ subMenu.text }}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
